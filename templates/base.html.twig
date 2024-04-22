@@ -13,10 +13,9 @@
 {#        {% block importmap %}{{ importmap('app') }}{% endblock %}#}
 {#    {% endblock %}#}
 </head>
-<body>
+<body class="container-centre">
+{%  include 'fragments/header.html.twig' %}
 <main>
-
-
 {% block body %}{% endblock %}
 </main>
 </body>
