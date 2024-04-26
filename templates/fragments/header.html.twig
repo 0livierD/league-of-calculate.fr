@@ -1,11 +1,16 @@
 
     <div class="container-header ombre">
-        <div class="boiteLogo">
+        <div class="boiteHeader">
             <img class="logo" src="{{ asset('image/logo2.png') }}" alt="logo">
         </div>
         <h1 class="h1Header">League Of Calculate</h1>
-        <div class="boiteLogo">
-
+        <div class="boiteHeader">
+            {% if app.user is null %}
+                <button class="button"><a href="{{ path('app_login') }}">Se connecter</a></button>
+                <a href="{{ path('app_register') }}">S'inscrire ?</a>
+            {% else %}
+                <button class="button"><a href="{{ path('app_logout') }}">Se déconnecter</a></button>
+            {% endif %}
         </div>
     </div>
 

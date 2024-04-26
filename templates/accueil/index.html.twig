@@ -4,17 +4,16 @@
 
 {% block body %}
     <div class="container-gauche ombre">
-        <div class="flex">
-            <div>
-                vfdq
-            </div>
+            <div ><i id="infoResultat"></i></div>
             <div class="bordure">
-                <button class="button"><a href="{{ path('app_register') }}">S'inscrire</a></button>
-                <button class="button"><a href="{{ path('app_login') }}">Se connecter</a></button>
             </div>
-        </div>
     </div>
     <div class="container-droite ombre">
-
+            <div id="operation"></div>
+            <div id="reponse"></div>
     </div>
 {% endblock %}
+{% block javascript %}
+<script src="{{ asset('js/calculTest.js') }}"></script>
+{% endblock %}
+
