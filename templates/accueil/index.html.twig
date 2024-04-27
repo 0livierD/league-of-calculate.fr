@@ -4,13 +4,14 @@
 
 {% block body %}
     <div class="container-gauche ombre">
-            <div ><i id="infoResultat"></i></div>
-            <div class="bordure">
-            </div>
+        <div><i id="infoResultat"></i></div>
+        <div id="affichageScore"></div>
     </div>
     <div class="container-droite ombre">
-            <div id="operation"></div>
-            <div id="reponse"></div>
+        <div id="affichageNiveau"></div>
+        <div id="operation"></div>
+        <div class="reponse"></div>
+        <button class="niveauSuivant displayNone">Niveau suivant</button>
     </div>
 {% endblock %}
 {% block javascript %}
