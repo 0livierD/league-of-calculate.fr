@@ -47,7 +47,7 @@ body {
     height: calc(100vh - 130px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -131,12 +131,12 @@ a {
 }
 
 #operation {
-    margin-top: 10vh;
+    margin-top: 3vh;
     font-size: 6em;
 }
 
 .reponse {
-    margin-top: 10vh;
+    margin-top: 5vh;
     font-size: 6em;
 }
 
@@ -159,8 +159,13 @@ a {
     margin-top: 5vh;
 }
 
-.bravo {
+.chrono {
+    font-size: 3em;
     margin-top: 10vh;
+}
+
+.bravo {
+    margin-top: 5vh;
     font-size: 3em;
 }
 
@@ -170,4 +175,21 @@ a {
 
 .displayNone {
     display: none;
+}
+
+.image-rang {
+    height: 200px;
+    margin-top: 30px;
+}
+
+.policeRang {
+    font-size: 2.5em;
+}
+
+.button-central {
+    margin-top: 300px;
+}
+
+#infoResultat, #affichageScore {
+    margin-top: 30px;
 }

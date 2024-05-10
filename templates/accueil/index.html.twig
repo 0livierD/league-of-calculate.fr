@@ -3,18 +3,8 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-    <div class="container-gauche ombre">
-        <div><i id="infoResultat"></i></div>
-        <div id="affichageScore"></div>
-    </div>
+   {% include 'fragments/container-gauche.html.twig' %}
     <div class="container-droite ombre">
-        <div id="affichageNiveau"></div>
-        <div id="operation"></div>
-        <div class="reponse"></div>
-        <button class="niveauSuivant displayNone">Niveau suivant</button>
+        <button class="button-central"><a href="{{ path('app_calcul_mental') }}">Jouer</a></button>
     </div>
 {% endblock %}
-{% block javascript %}
-<script src="{{ asset('js/calculTest.js') }}"></script>
-{% endblock %}
-
