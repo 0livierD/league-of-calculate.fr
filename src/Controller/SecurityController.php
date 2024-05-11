@@ -14,8 +14,6 @@ class SecurityController extends AbstractController
     public function login(  AuthenticationUtils $authenticationUtils,
                             RangRepository $rangRepository): Response
     {
-        $rang = $rangRepository->find(0);
-
             // if ($this->getUser()) {
             //     return $this->redirectToRoute('target_path');
             // }
