@@ -31,7 +31,6 @@ class RegistrationController extends AbstractController
                              RangRepository $rangRepository): Response
     {
         $test = $rangRepository->find(1);
-
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
