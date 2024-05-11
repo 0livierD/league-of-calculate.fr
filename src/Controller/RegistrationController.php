@@ -15,22 +15,25 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 
+#[IsGranted('ROLE_USER')]
 class RegistrationController extends AbstractController
 {
+
     public function __construct(private EmailVerifier $emailVerifier)
     {
     }
 
+
     #[Route('/register', name: 'app_register')]
-    public function register(Request $request,
+    public function register(Request                     $request,
                              UserPasswordHasherInterface $userPasswordHasher,
-                             EntityManagerInterface $entityManager,
-                             RangRepository $rangRepository): Response
+                             EntityManagerInterface      $entityManager,
+                             RangRepository              $rangRepository): Response
     {
-        $test = $rangRepository->find(1);
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -66,9 +69,9 @@ class RegistrationController extends AbstractController
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form,
-            'test' => $test
         ]);
     }
+
 
     #[Route('/verify/email', name: 'app_verify_email')]
     public function verifyUserEmail(Request $request, TranslatorInterface $translator, UserRepository $userRepository): Response
