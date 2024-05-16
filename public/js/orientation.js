@@ -1,6 +1,6 @@
 // Détecter si l'appareil est une tablette ou un téléphone
 function isMobileDevice() {
-    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    return (typeof window.screen !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 }
 
 // Forcer le mode paysage
