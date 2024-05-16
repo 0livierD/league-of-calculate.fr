@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>League Of Calculate - {% block title %}{% endblock %}</title>
-    <link rel="icon" href='/image/logo2.png'>
+    <link rel="icon" href={{ asset('image/logo2.png') }}>
     <link rel="stylesheet" href="{{ asset('style.css') }}">
     <script src="https://kit.fontawesome.com/f050e832ac.js" crossorigin="anonymous"></script>
     {% block stylesheets %}
@@ -22,6 +22,7 @@
 {% block body %}{% endblock %}
 
 </main>
+<script src="{{ asset('js/orientation.js') }}"></script>
 {% block javascript %}{% endblock %}
 </body>
 

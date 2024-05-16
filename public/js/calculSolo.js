@@ -4,11 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
         let reponse = document.querySelector('.reponse')
         let infoResultat = document.querySelector('#infoResultat')
         let affichageScore = document.querySelector('#affichageScore')
+        let affichageEchec = document.querySelector('#affichageEchec')
         let affichageNiveau = document.querySelector('#affichageNiveau')
         let niveauSuivant = document.querySelector('.niveauSuivant')
         let chrono = document.querySelector('.chrono')
+        let listeErreurDiv = document.querySelector('#liste-erreurs')
 
-        let seconde = 30
+        let seconde = 5
 
         let timer
         decompte()
@@ -17,42 +19,80 @@ document.addEventListener('DOMContentLoaded', () => {
         affichageNiveau.innerHTML = 'Niveau ' + niveau
 
         let score = 0
+        let echec = 0
         let number
         let number2
+        let ordreAffichage
         let resultat
+        let listeErreurs = []
 
         lancerQuestion()
 
         function lancerQuestion() {
 
-            affichageScore.innerHTML = score + ' / 5'
+            affichageScore.innerHTML = score + ' / 20'
+
+            // switch (niveau) {
+            //     case 1:
+            //         number = Math.floor(Math.random() * 10)
+            //         number2 = Math.floor(Math.random() * 10)
+            //         resultat = number + number2
+            //         operation.innerHTML = number + ' + ' + number2
+            //         break
+            //
+            //     case 2 :
+            //         number = Math.floor(Math.random() * 100)
+            //         number2 = Math.floor(Math.random() * 10)
+            //         resultat = number + number2
+            //         operation.innerHTML = number + ' + ' + number2
+            //         break
+            //
+            //     case 3 :
+            //         number = Math.floor(Math.random() * 10)
+            //         number2 = Math.floor(Math.random() * 10)
+            //         if (number < number2) {
+            //             resultat = number2 - number
+            //             operation.innerHTML = number2 + ' - ' + number
+            //         } else {
+            //             resultat = number - number2
+            //             operation.innerHTML = number + ' - ' + number2
+            //         }
+            //         break
+            // }
+
 
             switch (niveau) {
                 case 1:
-                    number = Math.floor(Math.random() * 10)
-                    number2 = Math.floor(Math.random() * 10)
-                    resultat = number + number2
-                    operation.innerHTML = number + ' + ' + number2
+                    number = Math.floor(Math.random() * 5)
+                    number2 = Math.floor(Math.random() * 2 + 6)
+                    resultat = number * number2
+                    ordreAffichage = Math.floor(Math.random() * 2)
+                    if (ordreAffichage === 0) operation.innerHTML = number + ' x ' + number2
+                    if (ordreAffichage === 1) operation.innerHTML = number2 + ' x ' + number
+                    listeErreurs.push(operation.innerHTML)
                     break
 
                 case 2 :
-                    number = Math.floor(Math.random() * 100)
-                    number2 = Math.floor(Math.random() * 10)
-                    resultat = number + number2
-                    operation.innerHTML = number + ' + ' + number2
+                    number = Math.floor(Math.random() * 5 + 5)
+                    number2 = Math.floor(Math.random() * 2 + 6)
+                    resultat = number * number2
+                    ordreAffichage = Math.floor(Math.random() * 2)
+                    if (ordreAffichage === 0) operation.innerHTML = number + ' x ' + number2
+                    if (ordreAffichage === 1) operation.innerHTML = number2 + ' x ' + number
+                    listeErreurs.push(operation.innerHTML)
                     break
 
-                case 3 :
-                    number = Math.floor(Math.random() * 10)
-                    number2 = Math.floor(Math.random() * 10)
-                    if (number < number2) {
-                        resultat = number2 - number
-                        operation.innerHTML = number2 + ' - ' + number
-                    } else {
-                        resultat = number - number2
-                        operation.innerHTML = number + ' - ' + number2
-                    }
-                    break
+                // case 3 :
+                //     number = Math.floor(Math.random() * 10)
+                //     number2 = Math.floor(Math.random() * 10)
+                //     if (number < number2) {
+                //         resultat = number2 - number
+                //         operation.innerHTML = number2 + ' - ' + number
+                //     } else {
+                //         resultat = number - number2
+                //         operation.innerHTML = number + ' - ' + number2
+                //     }
+                //     break
             }
 
             document.addEventListener('keydown', saisie)
@@ -60,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function passageNiveauSuivant() {
-            seconde = 30
+            seconde = 120
             decompte()
             score = 0
             niveauSuivant.classList.add('displayNone')
@@ -80,21 +120,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (parseInt(reponse.innerHTML) === resultat) {
                     infoResultat.className = "fa-solid fa-thumbs-up victoire"
                     score++
+                    listeErreurs.pop()
                 } else {
                     infoResultat.className = "fa-solid fa-thumbs-down defaite"
+                    echec++
                 }
 
                 reponse.innerHTML = ""
                 document.removeEventListener('keydown', saisie)
 
-                if (score === 5) {
+                if (score === 20) {
                     clearTimeout(timer)
-                    affichageScore.innerHTML = score + ' / 5'
+                    affichageScore.innerHTML = score + ' / 20'
                     reponse.className = "bravo"
-                    reponse.innerHTML = "Bravo, niveau " + niveau + " réussi !"
-                    niveau++
-                    niveauSuivant.classList.remove('displayNone')
-                    niveauSuivant.addEventListener('click', passageNiveauSuivant)
+
+                    for (const erreur of listeErreurs) {
+                        const nouvelleDiv = document.createElement("div")
+                        nouvelleDiv.innerHTML = erreur
+                        nouvelleDiv.classList.add('erreur')
+                        listeErreurDiv.insertAdjacentElement('afterend', nouvelleDiv)
+                    }
+
+                    listeErreurDiv.classList.remove('displayNone')
+                    listeErreurs = []
+
+                    if (niveau === 2) {
+                        reponse.innerHTML = "Bravo, test " + niveau + " réussi ! Tu es champion(ne) de la table x6 et x7"
+                    } else {
+                        reponse.innerHTML = "Bravo, niveau " + niveau + " réussi !"
+                        niveau++
+                        niveauSuivant.classList.remove('displayNone')
+                        niveauSuivant.addEventListener('click', passageNiveauSuivant)
+                    }
+
                 } else {
                     lancerQuestion()
                 }
@@ -115,6 +173,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.removeEventListener('keydown', saisie)
                     reponse.className = "bravo"
                     reponse.innerHTML = "Perdu !"
+                    listeErreurs.pop()
+                    for (const erreur of listeErreurs) {
+                        const nouvelleDiv = document.createElement("div")
+                        nouvelleDiv.innerHTML = erreur
+                        nouvelleDiv.classList.add('erreur')
+                        listeErreurDiv.insertAdjacentElement('afterend', nouvelleDiv)
+                    }
+
+                    listeErreurDiv.classList.remove('displayNone')
+                    listeErreurs = []
 
                 }
             }, 1000)

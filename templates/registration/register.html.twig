@@ -6,23 +6,37 @@
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
-    <div >
+    <div>
         <div class="div-centre">
-            <h1 class="h1SansMargeHaute">Inscription</h1>
+            <h1 class="h1SansMarge marginBottom2vh">Inscription</h1>
 
             {{ form_errors(registrationForm) }}
 
             {{ form_start(registrationForm) }}
-            {{ form_row(registrationForm.pseudo) }}
-            {{ form_row(registrationForm.email) }}
-            {{ form_row(registrationForm.anneeNaissance) }}
-            {{ form_row(registrationForm.plainPassword, {
-                label: 'Password'
-            }) }}
-            {{ form_row(registrationForm.agreeTerms) }}
 
-            <button type="submit" class="btn">Register</button>
+            <div class="flex-formulaire">
+                {{ form_label(registrationForm.pseudo) }}
+                {{ form_widget(registrationForm.pseudo, {'attr' : {'class':'champs-formulaire'}}) }}
+            </div>
+            <div class="flex-formulaire">
+                {{ form_label(registrationForm.email) }}
+                {{ form_widget(registrationForm.email, {'attr' : {'class':'champs-formulaire'}}) }}
+            </div>
+            <div class="flex-formulaire">
+                {{ form_label(registrationForm.anneeNaissance) }}
+                {{ form_widget(registrationForm.anneeNaissance, {'attr' : {'class':'champs-formulaire'}}) }}
+            </div>
+            <div class="flex-formulaire">
+                {{ form_label(registrationForm.plainPassword) }}
+                {{ form_widget(registrationForm.plainPassword, {'attr' : {'class':'champs-formulaire'}}) }}
+            </div>
+            <div class="mentions">
+                {{ form_row(registrationForm.agreeTerms) }}
+                <label for="">Accepter les <a href="">mentions légales</a></label>
+            </div>
+{#            <button type="submit" class="btn button-inscription marginTop4vh">Valider</button>#}
             {{ form_end(registrationForm) }}
+
         </div>
     </div>
 
