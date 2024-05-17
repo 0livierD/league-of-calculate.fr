@@ -16,14 +16,16 @@
 </head>
 
 <body>
+<div class="wrapper">
+    {%  include 'fragments/header.html.twig' %}
+    <main>
+        {% block body %}{% endblock %}
 
-{%  include 'fragments/header.html.twig' %}
-<main>
-{% block body %}{% endblock %}
+    </main>
+    <script src="{{ asset('js/orientation.js') }}"></script>
+    {% block javascript %}{% endblock %}
+</div>
 
-</main>
-<script src="{{ asset('js/orientation.js') }}"></script>
-{% block javascript %}{% endblock %}
 </body>
 
 </html>
