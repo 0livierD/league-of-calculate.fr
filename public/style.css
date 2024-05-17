@@ -6,7 +6,7 @@ html {
 }
 
 .wrapper {
-    overflow: hidden;
+    height: calc(100vh - env(safe-area-inset-bottom));
 }
 
 *, *::before, *::after {
