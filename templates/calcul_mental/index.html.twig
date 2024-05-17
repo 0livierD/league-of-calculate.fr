@@ -4,16 +4,16 @@
 
 {% block body %}
     {% include 'fragments/container-gauche.html.twig' %}
-    <canvas class="container-droite ombre">
+    <div class="container-droite ombre" id="myvideo">
         <div id="affichageNiveau"></div>
         <div class="chrono"></div>
         <div id="operation"></div>
         <div class="reponse"></div>
         <button class="niveauSuivant displayNone">Niveau suivant</button>
-    </canvas>
+    </div>
 
 
 {% endblock %}
 {% block javascript %}
-<script src="{{ asset('js/calculSolo.js') }}"></script>
+<script type="module" src="{{ asset('js/calculSolo.js') }}"></script>
 {% endblock %}
