@@ -5,6 +5,10 @@ html {
     font-size: 2vh;
 }
 
+.wrapper {
+    height: calc(100vh - env(safe-area-inset-bottom));
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
