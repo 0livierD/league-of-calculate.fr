@@ -15,8 +15,7 @@
 
 </head>
 
-<body>
-<div class="wrapper">
+<body class="wrapper">
     {%  include 'fragments/header.html.twig' %}
     <main>
         {% block body %}{% endblock %}
@@ -24,7 +23,6 @@
     </main>
     <script src="{{ asset('js/orientation.js') }}"></script>
     {% block javascript %}{% endblock %}
-</div>
 
 </body>
 
