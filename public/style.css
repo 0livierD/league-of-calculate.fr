@@ -319,9 +319,9 @@ label {
 }
 
 
-@media screen and (max-width: 712px) {
-    .button, .button-inscription {
-        font-size: 1.1em;
-    }
-}
+/*@media screen and (max-width: 712px) {*/
+/*    .button, .button-inscription {*/
+/*        font-size: 1.1em;*/
+/*    }*/
+/*}*/
 
