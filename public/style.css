@@ -310,3 +310,18 @@ label {
 .displayNone {
     display: none;
 }
+
+
+@media screen and (max-width: 1024px) {
+    .button, .button-inscription {
+        font-size: 0.9em;
+    }
+}
+
+
+@media screen and (max-width: 712px) {
+    .button, .button-inscription {
+        font-size: 1.1em;
+    }
+}
+
