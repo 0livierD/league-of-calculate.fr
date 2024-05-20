@@ -9,32 +9,32 @@
         <div class="div-centre">
             <h1 class="marginH1">Inscription</h1>
 
-            {{ form_errors(registrationForm) }}
+{#            {{ form_errors(registrationForm) }}#}
 
-            {{ form_start(registrationForm) }}
+{#            {{ form_start(registrationForm) }}#}
 
-            <div class="flex-formulaire">
-                {{ form_label(registrationForm.pseudo) }}
-                {{ form_widget(registrationForm.pseudo, {'attr' : {'class':'champs-formulaire'}}) }}
-            </div>
-            <div class="flex-formulaire">
-                {{ form_label(registrationForm.email) }}
-                {{ form_widget(registrationForm.email, {'attr' : {'class':'champs-formulaire'}}) }}
-            </div>
-            <div class="flex-formulaire">
-                {{ form_label(registrationForm.anneeNaissance, 'Année de naissance') }}
-                {{ form_widget(registrationForm.anneeNaissance, {'attr' : {'class':'champs-formulaire'}}) }}
-            </div>
-            <div class="flex-formulaire">
-                {{ form_label(registrationForm.plainPassword) }}
-                {{ form_widget(registrationForm.plainPassword, {'attr' : {'class':'champs-formulaire'}}) }}
-            </div>
-            <div class="mentions">
-                {{ form_row(registrationForm.agreeTerms) }}
-                <label for="">Accepter les <a href="">mentions légales</a></label>
-            </div>
-            <button type="submit" class="btn button-valider marginTop3vh">Valider</button>
-            {{ form_end(registrationForm) }}
+{#            <div class="flex-formulaire">#}
+{#                {{ form_label(registrationForm.pseudo) }}#}
+{#                {{ form_widget(registrationForm.pseudo, {'attr' : {'class':'champs-formulaire'}}) }}#}
+{#            </div>#}
+{#            <div class="flex-formulaire">#}
+{#                {{ form_label(registrationForm.email) }}#}
+{#                {{ form_widget(registrationForm.email, {'attr' : {'class':'champs-formulaire'}}) }}#}
+{#            </div>#}
+{#            <div class="flex-formulaire">#}
+{#                {{ form_label(registrationForm.anneeNaissance, 'Année de naissance') }}#}
+{#                {{ form_widget(registrationForm.anneeNaissance, {'attr' : {'class':'champs-formulaire'}}) }}#}
+{#            </div>#}
+{#            <div class="flex-formulaire">#}
+{#                {{ form_label(registrationForm.plainPassword) }}#}
+{#                {{ form_widget(registrationForm.plainPassword, {'attr' : {'class':'champs-formulaire'}}) }}#}
+{#            </div>#}
+{#            <div class="mentions">#}
+{#                {{ form_row(registrationForm.agreeTerms) }}#}
+{#                <label for="">Accepter les <a href="">mentions légales</a></label>#}
+{#            </div>#}
+{#            <button type="submit" class="btn button-valider marginTop3vh">Valider</button>#}
+{#            {{ form_end(registrationForm) }}#}
 
         </div>
 
