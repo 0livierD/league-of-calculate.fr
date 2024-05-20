@@ -1,16 +1,19 @@
 
-    <div class="container-header ombre">
-        <div class="boiteHeader">
-            <img class="logo" src="{{ asset('image/logo2.png') }}" alt="logo">
+<div class="gros-container-header">
+    <div class="container-header">
+        <div class="boiteHeaderGauche">
+{#            <img class="logo" src="{{ asset('image/logo2.png') }}" alt="logo">#}
         </div>
-        <div class="boiteHeader">
+        <div class="boiteHeaderDroite">
             {% if app.user is null %}
-                <button class="button"><a class="aHeader" href="{{ path('app_login') }}">Se connecter</a></button>
                 <button class="button-inscription"><a class="aHeader" href="{{ path('app_register') }}">S'inscrire</a></button>
+                <button class="button"><a class="aHeader" href="{{ path('app_login') }}">Se connecter</a></button>
             {% else %}
                 <button class="button"><a class="aHeader" href="{{ path('app_logout') }}">Se déconnecter</a></button>
                 <div class="boutonProfil">{{ app.user.pseudo }}</div>
             {% endif %}
         </div>
     </div>
+</div>
+
 
