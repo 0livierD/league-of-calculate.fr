@@ -19,7 +19,7 @@ body {
 }
 
 main {
-    height: 83%;
+    height: 88%;
     width: 98%;
     display: flex;
     justify-content: center;
@@ -30,7 +30,6 @@ main {
     background: rgba(230, 230, 230, 0.5);
     text-align: center;
     width: 60vw;
-    padding-top: 1vh;
     padding-bottom: 2vh;
 }
 
@@ -71,15 +70,13 @@ main {
 
 .gros-container-header {
 
-    height: 17%;
+    height: 12%;
     width: 98%;
     display: flex;
     align-items: center;
 }
 
 .container-header {
-
-
     height: 82%;
     width: 100%;
     display: flex;
@@ -108,9 +105,8 @@ main {
 .button {
     font-family: Apple Chancery, cursive;
     /*box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);*/
-
     background: rgba(230, 230, 230, 0.5);
-    height: 35%;
+    height: 5vh;
     border: 0;
     margin-left: 1vw;
     margin-right: 1vw;
@@ -123,7 +119,7 @@ main {
     /*box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);*/
     /*border: 2px solid #eb6020;*/
     border: 0;
-    height: 35%;
+    height: 5vh;
 
 }
 
@@ -266,7 +262,7 @@ label > a {
 }
 
 label {
-
+    font-size: 0.9em;
 }
 
 .champs-formulaire {
@@ -274,7 +270,7 @@ label {
     margin-top: 1vh;
     margin-bottom: 2vh;
     width: 40vw;
-    font-family: Apple Chancery, cursive;;
+    font-family: Apple Chancery, cursive;
     border-radius: 10px;
     background: #7771be;
     padding: 1.5vh;
@@ -288,20 +284,6 @@ label {
     margin-left: 10vw
 }
 
-/* OUTILS */
-
-.marginTop4vh {
-    margin-top: 4vh;
-}
-
-.marginH1 {
-    margin-top: 1vh;
-    margin-bottom: 2vh;
-}
-
-.displayNone {
-    display: none;
-}
 
 
 .button-valider {
@@ -339,4 +321,20 @@ label {
 .button-valider:hover {
     color: #111;
     cursor: pointer;
+}
+
+
+/* OUTILS */
+
+.marginTop3vh {
+    margin-top: 3vh;
+}
+
+.marginH1 {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.displayNone {
+    display: none;
 }
