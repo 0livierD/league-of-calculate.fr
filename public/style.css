@@ -1,5 +1,4 @@
 html {
-    color: black !important;
     font-family: Apple Chancery, cursive;
     height: 100%;
 }
@@ -128,6 +127,7 @@ h1 {
 
 .mentions>label {
     margin-bottom:0;
+    color: black !important;
 }
 
 .checkbox {
@@ -142,6 +142,7 @@ label > a {
 
 label {
     font-size: 0.8rem;
+    color: black !important;
 }
 
 .champs-formulaire {
