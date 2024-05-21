@@ -297,6 +297,16 @@ label {
     .button, .button-inscription {
         font-size: 0.9em;
     }
+
+    .div-centre {
+        width: 80vw;
+    }
+
+    .champs-formulaire {
+        width: 60vw !important;
+    }
+
+
 }
 
 @media screen and (max-height:530px) {
