@@ -1,11 +1,12 @@
 html {
+    color: black !important;
     font-family: Apple Chancery, cursive;
     height: 100%;
 }
 
 body {
     background-color: #7771be;
-    padding-top: 10px;
+    padding: 10px;
     height: 100%;
 }
 
@@ -16,6 +17,7 @@ main {
 }
 
 h1 {
+    color: black !important;
     font-size: 1.6rem;
     margin-bottom: 2vh !important;
 }
