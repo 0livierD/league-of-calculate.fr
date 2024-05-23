@@ -18,7 +18,12 @@ main {
 h1 {
     color: black !important;
     font-size: 1.6rem;
-    margin-bottom: 2vh !important;
+    margin-bottom: 3vh !important;
+}
+
+p {
+    font-size: 0.8rem;
+    margin: 0;
 }
 
 /* Header */
@@ -178,7 +183,11 @@ label {
     margin-bottom: 3vh !important;
 }
 
-
+.messageErreur {
+    font-size: 0.7rem;
+    color : #b23232;
+    text-align: center;
+}
 
 /*********************************************/
 /*********************************************/
@@ -295,6 +304,9 @@ label {
     display: none;
 }
 
+.marginBottom3vh {
+    margin-bottom: 3vh;
+}
 
 @media screen and (max-width: 1024px) {
     .button, .button-inscription {

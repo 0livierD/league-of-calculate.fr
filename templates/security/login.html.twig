@@ -6,18 +6,23 @@
 
     <div class="div-centre">
         <form method="post">
-            {% if error %}
-                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-            {% endif %}
 
-            {% if app.user %}
-                <div class="mb-3">
-                    You are logged in as {{ app.user.userIdentifier }}, <a
-                            href="{{ path('app_logout') }}">Logout</a>
-                </div>
-            {% endif %}
+{#            {% if app.user %}#}
+{#                <div class="mb-3">#}
+{#                    You are logged in as {{ app.user.userIdentifier }}, <a#}
+{#                            href="{{ path('app_logout') }}">Logout</a>#}
+{#                </div>#}
+{#            {% endif %}#}
 
             <h1 class="marginH1">Se connecter</h1>
+
+            {% if error %}
+                {% if error.message == 'pas vérifié' %}
+                    <div class="messageErreur">Votre compte n'a pas encore été activé, merci de cliquer sur le lien qui vous a été envoyé par mail. </div>
+                      <div class="messageErreur marginBottom3vh">Pour renvoyer un lien, Cliquez <a href="{{ path('app_relance_email', {'id': app.session.get('id')}) }}">ici</a></div>
+                {% endif %}
+            {% endif %}
+
             <div class="flex-formulaire">
                 <label for="inputEmail">Email</label>
                 <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="champs-formulaire"
