@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau mot de passe{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <div class="div-centre">
+        <h1>Nouveau mot de passe</h1>
+
+        {{ form_start(requestForm) }}
+        <div class="flex-formulaire">
+            {{ form_label(requestForm.email) }}
+            {{ form_widget(requestForm.email, {'attr': {'class':'champs-formulaire'}})}}
+        </div>
+
+        <div>
+            <p>
+                Entrer votre adresse email et nous vous enverrons un lien pour créer un nouveau mot de passe
+            </p>
+        </div>
+
+        <button class="buttonValider marginTop3vh">Envoyer</button>
+        {{ form_end(requestForm) }}
+    </div>
+
+{% endblock %}

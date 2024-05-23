@@ -68,9 +68,7 @@ p {
     background-color: rgba(211, 0, 14, 0);
     font-size:0.7em;
     /*box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);*/
-    /*border: 2px solid #eb6020;*/
     border: 0;
-    /*height: 5vh;*/
 }
 
 .button-inscription:hover {
@@ -100,11 +98,6 @@ p {
 .aHeader {
     text-decoration: none;
     color: black;
-    /*    display: flex;*/
-    /*    justify-content: center;*/
-    /*    align-items: center;*/
-    /*    width: 100%;*/
-    /*    height: 100%;*/
 }
 
 /******************************/
@@ -124,6 +117,18 @@ p {
 /* Inscription et connexion*/
 /*********************************************/
 
+.mpdOublie {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10vw;
+    width: 40vw;
+}
+
+.mpdOublie>label>a {
+    color: black;
+}
+
 .mentions {
     display: flex;
     align-items: center;
@@ -133,6 +138,7 @@ p {
 .mentions>label {
     margin-bottom:0;
     color: black !important;
+
 }
 
 .checkbox {
@@ -143,6 +149,7 @@ p {
 label > a {
     color: rgb(0, 0, 238);
     text-align: left;
+    text-decoration: none;
 }
 
 label {
@@ -317,7 +324,7 @@ label {
         width: 80vw;
     }
 
-    .champs-formulaire {
+    .champs-formulaire, .mpdOublie {
         width: 60vw !important;
     }
 
