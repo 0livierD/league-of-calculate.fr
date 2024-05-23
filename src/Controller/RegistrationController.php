@@ -12,6 +12,7 @@ use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
@@ -28,6 +29,9 @@ class RegistrationController extends AbstractController
     }
 
 
+    /**
+     * @throws TransportExceptionInterface
+     */
     #[Route('/register', name: 'app_register')]
     public function register(Request                     $request,
                              UserPasswordHasherInterface $userPasswordHasher,
@@ -106,6 +110,9 @@ class RegistrationController extends AbstractController
         return $this->redirectToRoute('app_login');
     }
 
+    /**
+     * @throws TransportExceptionInterface
+     */
     #[Route('/relanceEmail', name: 'app_relance_email')]
     public function relanceEmail(Request $request, UserRepository $userRepository): Response
     {
@@ -115,9 +122,9 @@ class RegistrationController extends AbstractController
 
         $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
             (new TemplatedEmail())
-                ->from(new Address('admin@admin.com', 'Admin'))
+                ->from(new Address('no-reply@league-of-calculate.fr', 'Admin'))
                 ->to($user->getEmail())
-                ->subject('Please Confirm your Email')
+                ->subject('Verification email')
                 ->htmlTemplate('registration/confirmation_email.html.twig')
         );
 
