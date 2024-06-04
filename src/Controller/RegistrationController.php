@@ -74,10 +74,10 @@ class RegistrationController extends AbstractController
             ]);
         }
 
-        if ($form->isSubmitted() && !$form->isValid()) {
-            $errors=$form->getErrors();
-            dd($errors);
-        }
+//        if ($form->isSubmitted() && !$form->isValid()) {
+//            $errors=$form->getErrors();
+//            dd($errors);
+//        }
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
