@@ -4,13 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let reponse = document.querySelector('.reponse')
         let infoResultat = document.querySelector('#infoResultat')
         let affichageScore = document.querySelector('#affichageScore')
-        let affichageEchec = document.querySelector('#affichageEchec')
         let affichageNiveau = document.querySelector('#affichageNiveau')
         let niveauSuivant = document.querySelector('.niveauSuivant')
         let chrono = document.querySelector('.chrono')
         let listeErreurDiv = document.querySelector('#liste-erreurs')
 
-        let seconde = 5
+        let seconde = 120
 
         let timer
         decompte()
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function lancerQuestion() {
 
-            affichageScore.innerHTML = score + ' / 20'
+            affichageScore.innerHTML = score + ' / 15'
 
             // switch (niveau) {
             //     case 1:
@@ -63,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             switch (niveau) {
                 case 1:
-                    number = Math.floor(Math.random() * 5)
-                    number2 = Math.floor(Math.random() * 2 + 6)
+                    number = Math.floor(Math.random() * 5 + 1)
+                    number2 = Math.floor(Math.random() * 5 + 5)
                     resultat = number * number2
                     ordreAffichage = Math.floor(Math.random() * 2)
                     if (ordreAffichage === 0) operation.innerHTML = number + ' x ' + number2
@@ -73,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     break
 
                 case 2 :
-                    number = Math.floor(Math.random() * 5 + 5)
-                    number2 = Math.floor(Math.random() * 2 + 6)
+                    number = Math.floor(Math.random() * 4 + 6)
+                    number2 = Math.floor(Math.random() * 4 + 6)
                     resultat = number * number2
                     ordreAffichage = Math.floor(Math.random() * 2)
                     if (ordreAffichage === 0) operation.innerHTML = number + ' x ' + number2
@@ -112,11 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function saisie(e) {
+
             if (e.key === 'Backspace') {
-                if (reponse != null) {
+                if (reponse.innerHTML) {
                     reponse.innerHTML = reponse.innerHTML.substring(0, (reponse.innerHTML.length - 1))
                 }
-            } else if (e.key === 'Enter') {
+            } else if (e.key === 'Enter' && reponse.innerHTML) {
                 if (parseInt(reponse.innerHTML) === resultat) {
                     infoResultat.className = "fa-solid fa-thumbs-up victoire"
                     score++
@@ -129,9 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 reponse.innerHTML = ""
                 document.removeEventListener('keydown', saisie)
 
-                if (score === 20) {
+                if (score === 15) {
                     clearTimeout(timer)
-                    affichageScore.innerHTML = score + ' / 20'
+                    affichageScore.innerHTML = score + ' / 15'
                     reponse.className = "bravo"
 
                     for (const erreur of listeErreurs) {
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     listeErreurs = []
 
                     if (niveau === 2) {
-                        reponse.innerHTML = "Bravo, test " + niveau + " réussi ! Tu es champion(ne) de la table x6 et x7"
+                        reponse.innerHTML = "Bravo, test " + niveau + " réussi ! Tu es champion(ne) des tables de multiplications"
                     } else {
                         reponse.innerHTML = "Bravo, niveau " + niveau + " réussi !"
                         niveau++
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else {
                 const num = parseInt(e.key)
-                if (num >= 0 && num <= 9) {
+                if (num >= 0 && num <= 9 && reponse.innerHTML.length < 10) {
                     reponse.innerHTML = reponse.innerHTML + num
                 }
             }

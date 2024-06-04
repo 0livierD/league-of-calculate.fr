@@ -102,16 +102,34 @@ p {
 
 /******************************/
 
+.container-centre {
+
+}
+
 .div-centre {
     background: rgba(230, 230, 230, 0.5);
     text-align: center;
     width: 60vw;
-    padding-top: 3vh;
+    padding: 3vh 2vw;
     /*padding-bottom: 2vh;*/
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
 }
+
+.div-scroll {
+    background: rgba(230, 230, 230, 0.5);
+    text-align: center;
+    width: 60vw;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 3vh 2vw;
+    /*padding-bottom: 2vh;*/
+    margin-left: auto;
+    margin-right: auto;
+    /*border-radius: 20px;*/
+}
+
 
 /*********************************************/
 /* Inscription et connexion*/
@@ -121,7 +139,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 10vw;
+    margin-left: 8vw;
     width: 40vw;
 }
 
@@ -132,8 +150,11 @@ p {
 .mentions {
     display: flex;
     align-items: center;
-    margin-left: 10vw;
+    margin-left: 8vw;
+    align-self: flex-start;
 }
+
+
 
 .mentions>label {
     margin-bottom:0;
@@ -172,7 +193,12 @@ label {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 10vw
+}
+
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .buttonValider {
@@ -221,7 +247,7 @@ label {
     top: 120px;
     right: 10px;
     width: calc(100% - 330px);
-    height: calc(100vh - 16vh);
+    height: calc(100vh - 130px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -235,43 +261,43 @@ label {
 
 #operation {
     margin-top: 3vh;
-    font-size: 5em;
+    font-size: 2rem;
     font-family: Trebuchet, sans-serif;
 }
 
 .reponse {
     margin-top: 5vh;
-    font-size: 5em;
+    font-size: 2rem;
     font-family: Trebuchet, sans-serif;
 }
 
 .victoire {
-    font-size: 5em;
+    font-size: 2rem;
     color: #06d300;
 }
 
 .defaite {
-    font-size: 5em;
+    font-size: 2rem;
     color: #d3000e;
 }
 
 #affichageScore, #affichageEchec {
-    font-size: 3em;
+    font-size: 1rem;
 }
 
 #affichageNiveau {
-    font-size: 3em;
+    font-size: 1rem;
     margin-top: 5vh;
 }
 
 .chrono {
-    font-size: 3em;
+    font-size: 1rem;
     margin-top: 10vh;
 }
 
 .bravo {
     margin-top: 5vh;
-    font-size: 3em;
+    font-size: 1rem;
 }
 
 .niveauSuivant {
@@ -285,11 +311,11 @@ label {
 }
 
 .policeRang {
-    font-size: 2.5em;
+    font-size: 1.5em;
 }
 
 .button-central {
-    margin-top: 300px;
+
 }
 
 #infoResultat, #affichageScore {
@@ -297,8 +323,8 @@ label {
 }
 
 #liste-erreurs, .erreur {
-    margin-top: 2.5vh;
-    font-size: 2em;
+    margin-top: 1.5vh;
+    font-size: 1em;
 }
 
 /* OUTILS */
@@ -313,6 +339,24 @@ label {
 
 .marginBottom3vh {
     margin-bottom: 3vh;
+}
+
+.flex-gauche{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.text-gauche {
+    text-align: left;
+}
+
+.flex {
+    display: flex;
+}
+
+.centrerHz {
+    justify-content: center;
 }
 
 @media screen and (max-width: 1024px) {

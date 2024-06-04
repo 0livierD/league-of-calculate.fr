@@ -34,6 +34,7 @@ class ResetPasswordController extends AbstractController
 
     /**
      * Display & process form to request a password reset.
+     * @throws TransportExceptionInterface
      */
     #[Route('', name: 'app_forgot_password_request')]
     public function request(Request $request, MailerInterface $mailer, TranslatorInterface $translator): Response
@@ -50,7 +51,7 @@ class ResetPasswordController extends AbstractController
         }
 
         return $this->render('reset_password/request.html.twig', [
-            'requestForm' => $form,
+            'requestForm' => $form->createView(),
         ]);
     }
 
@@ -128,7 +129,7 @@ class ResetPasswordController extends AbstractController
         }
 
         return $this->render('reset_password/reset.html.twig', [
-            'resetForm' => $form,
+            'resetForm' => $form->createView(),
         ]);
     }
 

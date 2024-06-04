@@ -6,36 +6,38 @@
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
-        <div class="div-centre">
-            <h1>Inscription</h1>
+            <div class="div-centre">
+                <h1>Inscription</h1>
 
-            {{ form_errors(registrationForm) }}
+                {{ form_errors(registrationForm) }}
 
-            {{ form_start(registrationForm) }}
+                {{ form_start(registrationForm, {'attr' : {'class' : 'formulaire'}}) }}
 
-            <div class="flex-formulaire">
-                {{ form_label(registrationForm.pseudo) }}
-                {{ form_widget(registrationForm.pseudo, {'attr' : {'class':'champs-formulaire'}}) }}
-            </div>
-            <div class="flex-formulaire">
-                {{ form_label(registrationForm.email) }}
-                {{ form_widget(registrationForm.email, {'attr' : {'class':'champs-formulaire'}}) }}
-            </div>
-            <div class="flex-formulaire">
-                {{ form_label(registrationForm.anneeNaissance, 'Année de naissance') }}
-                {{ form_widget(registrationForm.anneeNaissance, {'attr' : {'class':'champs-formulaire'}}) }}
-            </div>
-            <div class="flex-formulaire">
-                {{ form_label(registrationForm.plainPassword) }}
-                {{ form_widget(registrationForm.plainPassword, {'attr' : {'class':'champs-formulaire'}}) }}
-            </div>
-            <div class="mentions">
-                {{ form_row(registrationForm.agreeTerms, {'attr' : {'class':'checkbox'}}) }}
-                <label for="">Accepter les <a href="">mentions légales</a></label>
-            </div>
-{#            <button type="submit" class="buttonValider marginTop3vh">Valider</button>#}
-{#            {{ form_end(registrationForm) }}#}
+                <div class="flex-formulaire">
+                    {{ form_label(registrationForm.pseudo) }}
+                    {{ form_widget(registrationForm.pseudo, {'attr' : {'class':'champs-formulaire'}}) }}
+                </div>
+                <div class="flex-formulaire">
+                    {{ form_label(registrationForm.email) }}
+                    {{ form_widget(registrationForm.email, {'attr' : {'class':'champs-formulaire'}}) }}
+                </div>
+                <div class="flex-formulaire">
+                    {{ form_label(registrationForm.anneeNaissance, 'Année de naissance') }}
+                    {{ form_widget(registrationForm.anneeNaissance, {'attr' : {'class':'champs-formulaire'}}) }}
+                </div>
+                <div class="flex-formulaire">
+                    {{ form_label(registrationForm.plainPassword) }}
+                    {{ form_widget(registrationForm.plainPassword, {'attr' : {'class':'champs-formulaire'}}) }}
+                </div>
+                <div class="mentions">
+                    {{ form_row(registrationForm.agreeTerms, {'attr' : {'class':'checkbox'}}) }}
+                    <label for="">Accepter les <a href="{{ path('app_mentions_legales') }}">mentions légales</a></label>
+                </div>
+                <button type="submit" class="buttonValider marginTop3vh">Valider</button>
+                {{ form_end(registrationForm) }}
 
-        </div>
+            </div>
+
+
 
 {% endblock %}

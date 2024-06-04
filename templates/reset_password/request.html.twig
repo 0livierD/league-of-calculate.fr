@@ -10,10 +10,10 @@
     <div class="div-centre">
         <h1>Nouveau mot de passe</h1>
 
-        {{ form_start(requestForm) }}
+        {{ form_start(requestForm, {'attr':{'class':'formulaire'}}) }}
         <div class="flex-formulaire">
             {{ form_label(requestForm.email) }}
-            {{ form_widget(requestForm.email, {'attr': {'class':'champs-formulaire'}})}}
+            {{ form_widget(requestForm.email, {'attr': {'class':'champs-formulaire'}}) }}
         </div>
 
         <div>
