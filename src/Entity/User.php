@@ -8,11 +8,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
-#[UniqueEntity(fields: ['email'], message: 'Il y a déjà un compte avec cet email')]
-#[UniqueEntity(fields: ['pseudo'], message: 'Ce pseudo existe déjà')]
+#[UniqueEntity(fields: ['email'], message: 'Il y a déjà un compte avec cet email !')]
+#[UniqueEntity(fields: ['pseudo'], message: 'Ce pseudo existe déjà !')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -39,6 +40,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $pseudo = null;
 
     #[ORM\Column(type: Types::SMALLINT)]
+    #[Assert\Range([
+        'min' => 1900,
+        'max' => 2020,
+        'notInRangeMessage' => 'L\'année de naissance doit être comprise entre {{ min }} et {{ max }}',
+    ])]
     private ?int $anneeNaissance = null;
 
     #[ORM\ManyToOne(inversedBy: 'users')]

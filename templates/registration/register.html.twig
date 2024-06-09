@@ -7,10 +7,16 @@
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
             <div class="div-centre">
+                <img src="{{ asset('image/instit.png') }}" alt="" class="instit displayNone">
+                <img src="{{ asset('image/bulle.png') }}" alt="" class="bulle displayNone">
                 <h1>Inscription</h1>
 
-                {{ form_errors(registrationForm) }}
+                <div class="displayNone" id="erreurs">
+                   {{ form_errors(registrationForm)}}
+                </div>
 
+                <div id="divErreur"></div>
+                
                 {{ form_start(registrationForm, {'attr' : {'class' : 'formulaire'}}) }}
 
                 <div class="flex-formulaire">
@@ -38,6 +44,7 @@
 
             </div>
 
-
-
+{% endblock %}
+{% block javascript %}
+<script src="{{ asset('js/messages.js') }}"></script>
 {% endblock %}

@@ -26,6 +26,7 @@ p {
     margin: 0;
 }
 
+
 /* Header */
 
 .container-header {
@@ -41,15 +42,15 @@ p {
 }
 
 .boiteHeaderDroite {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
 }
 
 
 .button {
     /*    !*box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);*!*/
     background: rgba(230, 230, 230, 0.5);
-    font-size:0.7em;
+    font-size: 0.7em;
     border: 0;
     margin-left: 1vw;
     margin-right: 1vw;
@@ -66,7 +67,7 @@ p {
 .button-inscription {
     font-family: Apple Chancery, cursive;
     background-color: rgba(211, 0, 14, 0);
-    font-size:0.7em;
+    font-size: 0.7em;
     /*box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);*/
     border: 0;
 }
@@ -130,6 +131,38 @@ p {
     /*border-radius: 20px;*/
 }
 
+/*********************************************/
+/* Messages */
+/*********************************************/
+
+.erreur {
+    font-size: 0.8rem;
+}
+
+.instit {
+    height: 50%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.bulle {
+    height: 30%;
+    position: absolute;
+    bottom: 48%;
+    right: 12vh;
+}
+
+#divErreur {
+    position: absolute;
+    right: 17vh;
+    bottom: 59%;
+    display: flex;
+    width: 40vh;
+    justify-content: center;
+    flex-direction: column;
+    height: 15%;
+}
 
 /*********************************************/
 /* Inscription et connexion*/
@@ -143,7 +176,7 @@ p {
     width: 40vw;
 }
 
-.mpdOublie>label>a {
+.mpdOublie > label > a {
     color: black;
 }
 
@@ -155,9 +188,8 @@ p {
 }
 
 
-
-.mentions>label {
-    margin-bottom:0;
+.mentions > label {
+    margin-bottom: 0;
     color: black !important;
 
 }
@@ -203,7 +235,7 @@ label {
 
 .buttonValider {
     background: transparent;
-    font-size:0.7em;
+    font-size: 0.7em;
     border: 2px solid #7771be !important;
     margin-left: 1vw;
     margin-right: 1vw;
@@ -211,14 +243,14 @@ label {
     padding-bottom: 1vh;
     border-radius: 10px;
     width: auto !important;
-    color : black;
+    color: black;
     margin-top: 3vh !important;
     margin-bottom: 3vh !important;
 }
 
 .messageErreur {
     font-size: 0.7rem;
-    color : #b23232;
+    color: #b23232;
     text-align: center;
 }
 
@@ -252,7 +284,6 @@ label {
     flex-direction: column;
     align-items: center;
 }
-
 
 
 .ombre {
@@ -322,7 +353,7 @@ label {
     margin-top: 30px;
 }
 
-#liste-erreurs, .erreur {
+.liste-erreurs {
     margin-top: 1.5vh;
     font-size: 1em;
 }
@@ -341,7 +372,7 @@ label {
     margin-bottom: 3vh;
 }
 
-.flex-gauche{
+.flex-gauche {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -357,6 +388,10 @@ label {
 
 .centrerHz {
     justify-content: center;
+}
+
+.fontSizeSmall {
+    font-size: 0.6rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -375,10 +410,11 @@ label {
 
 }
 
-@media screen and (max-height:530px) {
-   main {
-       height: auto;
+@media screen and (max-height: 530px) {
+    main {
+        height: auto;
     }
+
     body {
         height: auto;
     }
