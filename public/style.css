@@ -419,3 +419,27 @@ label {
         height: auto;
     }
 }
+
+/*@media screen and (max-width: 500px) {*/
+/*    */
+/*}*/
+
+@media (orientation: portrait) {
+    /* Styles pour les écrans en mode portrait */
+    .instit {
+        height: 35%;
+    }
+
+    .bulle {
+        height: 20%;
+        bottom: 34%;
+        right: 8vh;
+    }
+
+    #divErreur {
+        right: 11vh;
+        bottom: 42%;
+        width: 27vh;
+        height: 9%;
+    }
+}
