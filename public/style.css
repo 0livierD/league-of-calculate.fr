@@ -103,10 +103,6 @@ p {
 
 /******************************/
 
-.container-centre {
-
-}
-
 .div-centre {
     background: rgba(230, 230, 230, 0.5);
     text-align: center;
@@ -154,6 +150,8 @@ p {
 }
 
 #divErreur {
+    color: black;
+    font-family: Apple Chancery, cursive;
     position: absolute;
     right: 17vh;
     bottom: 59%;
@@ -245,7 +243,6 @@ label {
     width: auto !important;
     color: black;
     margin-top: 3vh !important;
-    margin-bottom: 3vh !important;
 }
 
 .messageErreur {
