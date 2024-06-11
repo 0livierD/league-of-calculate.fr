@@ -406,7 +406,18 @@ label {
     .champs-formulaire, .mpdOublie {
         width: 60vw !important;
     }
+}
 
+@media screen and (max-width: 500px) {
+
+    .mpdOublie {
+        display: block;
+    }
+
+    .mpdOublie > label:first-child {
+        width: auto;
+        margin-bottom: 2vh;
+    }
 
 }
 
