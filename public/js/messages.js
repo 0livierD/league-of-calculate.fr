@@ -20,16 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         divErreur.appendChild(message)
 
-        setTimeout( () => {
-            instit.classList.add('displayNone')
-            bulle.classList.add('displayNone')
-            message.remove()
-        }, 8000)
-
-        document.addEventListener('click', () => {
-            instit.classList.add('displayNone')
-            bulle.classList.add('displayNone')
-            message.remove()
-        })
+        // setTimeout( () => {
+        //     instit.classList.add('displayNone')
+        //     bulle.classList.add('displayNone')
+        //     message.remove()
+        // }, 8000)
+        //
+        // document.addEventListener('click', () => {
+        //     instit.classList.add('displayNone')
+        //     bulle.classList.add('displayNone')
+        //     message.remove()
+        // })
     }
 })

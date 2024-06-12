@@ -136,30 +136,39 @@ p {
 }
 
 .instit {
-    height: 50%;
+    height: 65%;
+}
+
+.imageErreur {
     position: absolute;
     right: 0;
     bottom: 0;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 .bulle {
-    height: 30%;
-    position: absolute;
-    bottom: 48%;
-    right: 12vh;
+    height: 100%;
+}
+
+.bulleEtMessage {
+    position: relative;
+    height: 35%;
+    display: flex;
+    align-items: center;
 }
 
 #divErreur {
+    position: absolute;
+    top: 39%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
     color: black;
     font-family: Apple Chancery, cursive;
-    position: absolute;
-    right: 17vh;
-    bottom: 59%;
-    display: flex;
-    width: 40vh;
-    justify-content: center;
-    flex-direction: column;
-    height: 15%;
 }
 
 /*********************************************/
@@ -428,26 +437,23 @@ label {
     }
 }
 
-/*@media screen and (max-width: 500px) {*/
-/*    */
-/*}*/
-
-@media (orientation: portrait) {
-    /* Styles pour les écrans en mode portrait */
-    .instit {
-        height: 35%;
-    }
-
-    .bulle {
-        height: 20%;
-        bottom: 34%;
-        right: 8vh;
-    }
-
-    #divErreur {
-        right: 11vh;
-        bottom: 42%;
-        width: 27vh;
-        height: 9%;
-    }
+@media screen and (max-height: 360px) {
+    .erreur {
+               font-size: 0.7rem;
+            }
 }
+
+/*@media (orientation: portrait) {*/
+/*    !* Styles pour les écrans en mode portrait *!*/
+/*    .instit {*/
+/*        height: 35%;*/
+/*    }*/
+
+/*    .bulle {*/
+/*        height: 20%;*/
+/*        bottom: 34%;*/
+/*        right: 8vh;*/
+/*    }*/
+
+/*
+/*}*/

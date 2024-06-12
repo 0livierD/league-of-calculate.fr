@@ -43,7 +43,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\Range([
         'min' => 1900,
         'max' => 2020,
-        'notInRangeMessage' => 'L\'année de naissance doit être comprise entre {{ min }} et {{ max }}',
+        'notInRangeMessage' => 'L\'année de naissance doit être entre {{ min }} et {{ max }}',
     ])]
     private ?int $anneeNaissance = null;
 
