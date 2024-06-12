@@ -437,10 +437,16 @@ label {
     }
 }
 
-@media screen and (max-height: 360px) {
+@media screen and (max-height: 390px) {
     .erreur {
                font-size: 0.7rem;
             }
+}
+
+@media screen and (max-height: 340px) {
+    .erreur {
+        font-size: 0.6rem;
+    }
 }
 
 /*@media (orientation: portrait) {*/
