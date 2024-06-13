@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let instit = document.querySelector('.instit')
     let bulle = document.querySelector('.bulle')
 
-    if (erreurs[0] != null || erreurLogin.innerHTML.length !== 22) {
+    if (erreurs[0] != null || erreurLogin.innerHTML) {
         instit.classList.remove('displayNone')
         bulle.classList.remove('displayNone')
         let message = document.createElement('div')
@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (message.innerHTML !== 'Il y a déjà un compte avec cet email !') {
                 message.innerHTML = erreurs[0].innerHTML
             }
-        } else {
+        } else if (erreurLogin.innerHTML === 'Bad credentials.' || erreurLogin.innerHTML === 'The presented password is invalid.') {
             message.innerHTML = 'Email ou mot de passe incorrect !!'
         }
 
         divErreur.appendChild(message)
 
-        setTimeout( () => {
+        setTimeout(() => {
             instit.classList.add('displayNone')
             bulle.classList.add('displayNone')
             message.remove()
