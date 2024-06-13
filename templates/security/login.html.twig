@@ -5,6 +5,22 @@
 {% block body %}
 
     <div class="div-centre">
+
+{#        <div class="displayNone" id="erreurLogin">#}
+{#            {% if error is not null %}#}
+{#                {{ error.message }}#}
+{#            {% endif %}#}
+
+{#        </div>#}
+
+{#        <div class="imageErreur">#}
+{#            <div class="bulleEtMessage">#}
+{#                <img src="{{ asset('image/bulle.png') }}" alt="" class="bulle displayNone">#}
+{#                <div id="divErreur"></div>#}
+{#            </div>#}
+{#            <img src="{{ asset('image/instit.png') }}" alt="" class="instit displayNone">#}
+{#        </div>#}
+
         <form method="post">
 
 {#            {% if app.user %}#}
@@ -55,3 +71,7 @@
     </div>
 
 {% endblock %}
+
+{#{% block javascript %}#}
+{#<script src="{{ asset('js/messages.js') }}"></script>#}
+{#{% endblock %}#}
