@@ -6,31 +6,29 @@
 
     <div class="div-centre">
 
-{#        <div class="displayNone" id="erreurLogin">#}
-{#            {% if error is not null %}#}
-{#                {{ error.message }}#}
-{#            {% endif %}#}
+        <div class="displayNone" id="erreurLogin">
+            {% if error is not null %}
+                {{ error.message }}
+            {% endif %}
+        </div>
 
-{#        </div>#}
-
-{#        <div class="imageErreur">#}
-{#            <div class="bulleEtMessage">#}
-{#                <img src="{{ asset('image/bulle.png') }}" alt="" class="bulle displayNone">#}
-{#                <div id="divErreur"></div>#}
-{#            </div>#}
-{#            <img src="{{ asset('image/instit.png') }}" alt="" class="instit displayNone">#}
-{#        </div>#}
+        <div class="imageErreur">
+            <div class="bulleEtMessage">
+                <img src="{{ asset('image/bulle.png') }}" alt="" class="bulle displayNone">
+                <div id="divErreur"></div>
+            </div>
+            <img src="{{ asset('image/instit.png') }}" alt="" class="instit displayNone">
+        </div>
 
         <form method="post">
 
-{#            {% if app.user %}#}
-{#                <div class="mb-3">#}
-{#                    You are logged in as {{ app.user.userIdentifier }}, <a#}
-{#                            href="{{ path('app_logout') }}">Logout</a>#}
-{#                </div>#}
-{#            {% endif %}#}
-
             <h1 class="marginH1">Se connecter</h1>
+
+            {% if app.user %}
+                <div class="messageErreur">
+                    Tu es déjà connecté avec ce pseudo : {{ app.user.pseudo }}
+                </div>
+            {% endif %}
 
             {% if error %}
                 {% if error.message == 'pas vérifié' %}
