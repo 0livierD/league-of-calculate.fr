@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let instit = document.querySelector('.instit')
     let bulle = document.querySelector('.bulle')
 
+    erreurLogin.innerHTML = erreurLogin.innerHTML.trim()
+
     if (erreurs[0] != null || erreurLogin.innerHTML) {
         instit.classList.remove('displayNone')
         bulle.classList.remove('displayNone')
