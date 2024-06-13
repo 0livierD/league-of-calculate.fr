@@ -9,7 +9,19 @@
                 <button class="button"><a class="aHeader" href="{{ path('app_login') }}">Se connecter</a></button>
             {% else %}
                 <button class="button"><a class="aHeader" href="{{ path('app_logout') }}">Se déconnecter</a></button>
-                <div class="boutonProfil">{{ app.user.pseudo }}</div>
+                <div class="button-inscription">{{ app.user.pseudo }}
+                    <div class="menuDeroulant">
+                        <div class="flex colonne">
+                            <div class="espaceEntreMenuEtPseudo"></div>
+                            <div class="menuDeroulantVisible">
+                                <img src="{{ asset('image/rangBronze.png') }}" alt="">
+                                <div>Profil</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             {% endif %}
         </div>
     </div>

@@ -1,6 +1,7 @@
 html {
-    font-family: Apple Chancery, cursive;
+    font-family: Comic Sans MS, cursive;
     height: 100%;
+    color: black;
 }
 
 body {
@@ -46,7 +47,6 @@ p {
     align-items: center;
 }
 
-
 .button {
     /*    !*box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);*!*/
     background: rgba(230, 230, 230, 0.5);
@@ -65,35 +65,41 @@ p {
 }
 
 .button-inscription {
-    font-family: Apple Chancery, cursive;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    /*font-family: Apple Chancery, cursive;*/
     background-color: rgba(211, 0, 14, 0);
     font-size: 0.7em;
     /*box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);*/
     border: 0;
+    width: 150px;
+    text-align: center;
 }
 
-.button-inscription:hover {
-    cursor: pointer;
+.button-inscription:hover .menuDeroulantVisible  {
+    display: block;
     /*box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.25), 0 0 20px 0 rgba(0, 0, 0, 0.24);*/
 }
 
-.boutonProfil {
+.menuDeroulant {
+
+    position: absolute;
+    background-color: #7771be;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 151px;
     text-align: center;
-    font-family: Apple Chancery, cursive;
-    background: #ebd620;
-    border-radius: 5px;
-    height: 5vh;
-    border: 0;
-    margin-top: 1vh;
-    width: 30vh;
-    margin-bottom: 2vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 2;
 }
 
-.boutonProfil:hover {
-    cursor: context-menu;
+.menuDeroulantVisible {
+    display: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.espaceEntreMenuEtPseudo {
+    height: 3vh;
 }
 
 .aHeader {
@@ -168,7 +174,7 @@ p {
     transform: translate(-50%, -50%);
     width: 80%;
     color: black;
-    font-family: Apple Chancery, cursive;
+    /*font-family: Apple Chancery, cursive;*/
 }
 
 /*********************************************/
@@ -220,7 +226,7 @@ label {
 .champs-formulaire {
     height: 4vh !important;
     width: 40vw !important;
-    font-family: Apple Chancery, cursive;
+    /*font-family: Apple Chancery, cursive;*/
     border-radius: 10px;
     background: #7771be;
     border: none;
@@ -299,13 +305,13 @@ label {
 #operation {
     margin-top: 3vh;
     font-size: 2rem;
-    font-family: Trebuchet, sans-serif;
+    /*font-family: Trebuchet, sans-serif;*/
 }
 
 .reponse {
     margin-top: 5vh;
     font-size: 2rem;
-    font-family: Trebuchet, sans-serif;
+    /*font-family: Trebuchet, sans-serif;*/
 }
 
 .victoire {
@@ -398,6 +404,10 @@ label {
 
 .fontSizeSmall {
     font-size: 0.6rem;
+}
+
+.colonne {
+    flex-direction: column;
 }
 
 @media screen and (max-width: 1024px) {
