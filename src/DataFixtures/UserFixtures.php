@@ -24,7 +24,7 @@ class UserFixtures extends Fixture
         $admin1->setEmail('olivier.dy@gmail.com');
         $admin1->setPseudo('Admin');
         $admin1->setRoles(['ROLE_ADMIN']);
-        $admin1->setPassword($this->hasher->hashPassword($admin1, '123'));
+        $admin1->setPassword($this->hasher->hashPassword($admin1, 'Bettr@ve999!!!!'));
         $admin1->setRang($this->getReference('rangBronze'));
         $admin1->setAnneeNaissance('1979');
         $admin1->setVerified(true);
@@ -35,7 +35,7 @@ class UserFixtures extends Fixture
 
         $user1->setEmail('user@test.com');
         $user1->setPseudo('User');
-        $user1->setPassword($this->hasher->hashPassword($user1, '123'));
+        $user1->setPassword($this->hasher->hashPassword($user1, 'Bettr@ve999!!!!'));
         $user1->setRang($this->getReference('rangBronze'));
         $user1->setAnneeNaissance('2010');
         $user1->setVerified(true);
