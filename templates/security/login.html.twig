@@ -22,7 +22,7 @@
 
         <form method="post">
 
-            <h1 class="marginH1">Se connecter</h1>
+            <h1 class="marginH1">Connexion</h1>
 
             {% if app.user %}
                 <div class="messageErreur">
@@ -33,7 +33,7 @@
             {% if error %}
                 {% if error.message == 'pas vérifié' %}
                     <div class="messageErreur">Votre compte n'a pas encore été activé, merci de cliquer sur le lien qui vous a été envoyé par mail. </div>
-                      <div class="messageErreur marginBottom3vh">Pour renvoyer un lien, Cliquez <a href="{{ path('app_relance_email', {'id': app.session.get('id')}) }}">ici</a></div>
+                      <div class="messageErreur marginBottom3vh">Pour renvoyer un lien, Cliquez <a href="{{ path('app_relance_email', {'id': app.session.get('id'), 'nbRelance' : nbRelance}) }}">ici</a></div>
                 {% endif %}
             {% endif %}
 

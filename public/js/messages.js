@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         erreurLogin.innerHTML = erreurLogin.innerHTML.trim()
     }
 
-    if (erreurs[0] != null || (erreurLogin != null && erreurLogin.innerHTML)) {
+    if (erreurs[0] != null || (erreurLogin != null && erreurLogin.innerHTML && erreurLogin.innerHTML !== 'pas vérifié')) {
         instit.classList.remove('displayNone')
         bulle.classList.remove('displayNone')
         let message = document.createElement('div')

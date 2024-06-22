@@ -129,11 +129,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 reponse.innerHTML = ""
                 document.removeEventListener('keydown', saisie)
 
-                if (score === 15) {
+                if (score === 2) {
                     clearTimeout(timer)
                     affichageScore.innerHTML = score + ' / 15'
                     reponse.className = "bravo"
 
+                    if (listeErreurDiv != null) {
                     for (const erreur of listeErreurs) {
                         const nouvelleDiv = document.createElement("div")
                         nouvelleDiv.innerHTML = erreur
@@ -141,8 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         listeErreurDiv.insertAdjacentElement('afterend', nouvelleDiv)
                     }
 
-                    listeErreurDiv.classList.remove('displayNone')
-                    listeErreurs = []
+                        listeErreurDiv.classList.remove('displayNone')
+                        listeErreurs = []
+                    }
 
                     if (niveau === 2) {
                         reponse.innerHTML = "Bravo, test " + niveau + " réussi ! Tu es champion(ne) des tables de multiplications"

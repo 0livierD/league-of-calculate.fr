@@ -8,7 +8,13 @@
         <div class="marginBottom3vh">
             <p>Vous avez reçu un mail de confirmation afin de pouvoir finaliser votre inscription. Ce lien expirera dans
                 1 heure.</p>
-            <p>Si vous ne recevez pas d'e-mail, veuillez vérifier votre dossier spam ou Cliquez <a href="{{ path('app_relance_email', {'id':id}) }}">ici</a></p>
+            <p>Si vous ne recevez pas d'e-mail, veuillez vérifier votre dossier spam ou Cliquez
+                {% if nbRelance >= 1 %}
+                    <span>- Message envoyé !!</span>
+                {% else %}
+                    <a href="{{ path('app_relance_email', {'id':id, 'nbRelance':nbRelance}) }}">ici</a>
+                {% endif %}
+               </p>
         </div>
 
     </div>

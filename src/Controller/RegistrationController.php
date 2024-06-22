@@ -16,7 +16,6 @@ use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 
@@ -38,6 +37,8 @@ class RegistrationController extends AbstractController
                              EntityManagerInterface      $entityManager,
                              RangRepository              $rangRepository): Response
     {
+        $nbRelance = 0;
+
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -70,14 +71,10 @@ class RegistrationController extends AbstractController
             // do anything else you need here, like send an email
 
             return $this->render('registration/attente_confirmation.html.twig', [
-                'id' => $user->getId()
+                'id' => $user->getId(),
+                'nbRelance' => $nbRelance
             ]);
         }
-
-//        if ($form->isSubmitted() && !$form->isValid()) {
-//            $errors=$form->getErrors();
-//            dd($errors);
-//        }
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
@@ -121,6 +118,10 @@ class RegistrationController extends AbstractController
     #[Route('/relanceEmail', name: 'app_relance_email')]
     public function relanceEmail(Request $request, UserRepository $userRepository): Response
     {
+        $nbRelance = $request->get('nbRelance');
+        if ($nbRelance == null) $nbRelance = 0;
+        $nbRelance++;
+
         $id = $request->query->get('id');
 
         $user = $userRepository->find($id);
@@ -134,7 +135,8 @@ class RegistrationController extends AbstractController
         );
 
         return $this->render('registration/attente_confirmation.html.twig', [
-            'id' => $user->getId()
+            'id' => $user->getId(),
+            'nbRelance' => $nbRelance
         ]);
 
     }

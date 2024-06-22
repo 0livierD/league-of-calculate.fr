@@ -1,29 +1,34 @@
-
-    <div class="container-header">
-        <div class="boiteHeaderGauche">
-{#            <img class="logo" src="{{ asset('image/logo2.png') }}" alt="logo">#}
-        </div>
-        <div class="boiteHeaderDroite">
-            {% if app.user is null %}
-                <button class="button-inscription"><a class="aHeader" href="{{ path('app_register') }}">S'inscrire</a></button>
-                <button class="button"><a class="aHeader" href="{{ path('app_login') }}">Se connecter</a></button>
-            {% else %}
-                <button class="button"><a class="aHeader" href="{{ path('app_logout') }}">Se déconnecter</a></button>
-                <div class="button-inscription">{{ app.user.pseudo }}
-                    <div class="menuDeroulant">
-                        <div class="flex colonne">
-                            <div class="espaceEntreMenuEtPseudo"></div>
-                            <div class="menuDeroulantVisible">
-                                <img src="{{ asset('image/rangBronze.png') }}" alt="">
-                                <div>Profil</div>
-                            </div>
-
+<div class="container-header">
+    <div class="boiteHeaderGauche">
+        {#            <img class="logo" src="{{ asset('image/logo2.png') }}" alt="logo"> #}
+    </div>
+    <div class="boiteHeaderDroite">
+        {% if app.user is null %}
+            <button class="button-inscription"><a class="aHeader" href="{{ path('app_register') }}">S'inscrire</a>
+            </button>
+            <button class="button"><a class="aHeader" href="{{ path('app_login') }}">Se connecter</a></button>
+        {% else %}
+            <button class="button"><a class="aHeader" href="{{ path('app_logout') }}">Se déconnecter</a></button>
+            <div class="button-inscription">{{ app.user.pseudo }}
+                <div class="menuDeroulant">
+                    <div class="flex colonne">
+                        <div class="espaceEntreMenuEtPseudo"></div>
+                        <div class="menuDeroulantVisible">
+                            <img class="image-rang" src="{{ asset('image/' ~'rang' ~ app.user.rang.description ~'clean'~ '.png') }}"
+                                 alt="">
+                            <div>rang : {{ app.user.rang.description }}</div>
+                            <a class="aHeader" href="{{ path('app_user_edit', { 'id' : app.user.id }) }}">Mon compte</a>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="aHeader" href="{{ path('app_user_index') }}">Users</a>
+                            {% endif %}
                         </div>
+
                     </div>
                 </div>
+            </div>
 
-            {% endif %}
-        </div>
+        {% endif %}
     </div>
+</div>
 
 

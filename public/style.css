@@ -1,10 +1,10 @@
 html {
-    font-family: Comic Sans MS, cursive;
     height: 100%;
     color: black;
 }
 
 body {
+    font-family: Bradley Hand, Comic Sans MS, cursive !important;
     background-color: #7771be;
     padding: 10px;
     height: 100%;
@@ -17,6 +17,7 @@ main {
 }
 
 h1 {
+    font-family: Bradley Hand, Comic Sans MS, cursive !important;
     color: black !important;
     font-size: 1.6rem;
     margin-bottom: 3vh !important;
@@ -78,14 +79,13 @@ p {
 }
 
 .button-inscription:hover .menuDeroulantVisible  {
-    display: block;
-    /*box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.25), 0 0 20px 0 rgba(0, 0, 0, 0.24);*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .menuDeroulant {
-
     position: absolute;
-    background-color: #7771be;
     left: 50%;
     transform: translateX(-50%);
     width: 151px;
@@ -94,6 +94,7 @@ p {
 }
 
 .menuDeroulantVisible {
+    background: #6761b6;
     display: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -257,6 +258,19 @@ label {
     border-radius: 10px;
     width: auto !important;
     color: black;
+}
+
+.buttonEffacer {
+    background: transparent;
+    font-size: 0.7em;
+    border: 2px solid #d32121 !important;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-radius: 10px;
+    width: auto !important;
+    color: black;
     margin-top: 3vh !important;
 }
 
@@ -349,8 +363,8 @@ label {
 
 
 .image-rang {
-    height: 200px;
-    margin-top: 30px;
+    height: 120px;
+    margin-top: 15px;
 }
 
 .policeRang {
