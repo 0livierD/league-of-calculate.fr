@@ -31,68 +31,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
             affichageScore.innerHTML = score + ' / 15'
 
-            // switch (niveau) {
-            //     case 1:
-            //         number = Math.floor(Math.random() * 10)
-            //         number2 = Math.floor(Math.random() * 10)
-            //         resultat = number + number2
-            //         operation.innerHTML = number + ' + ' + number2
-            //         break
-            //
-            //     case 2 :
-            //         number = Math.floor(Math.random() * 100)
-            //         number2 = Math.floor(Math.random() * 10)
-            //         resultat = number + number2
-            //         operation.innerHTML = number + ' + ' + number2
-            //         break
-            //
-            //     case 3 :
-            //         number = Math.floor(Math.random() * 10)
-            //         number2 = Math.floor(Math.random() * 10)
-            //         if (number < number2) {
-            //             resultat = number2 - number
-            //             operation.innerHTML = number2 + ' - ' + number
-            //         } else {
-            //             resultat = number - number2
-            //             operation.innerHTML = number + ' - ' + number2
-            //         }
-            //         break
-            // }
-
-
             switch (niveau) {
                 case 1:
-                    number = Math.floor(Math.random() * 5 + 1)
-                    number2 = Math.floor(Math.random() * 5 + 5)
-                    resultat = number * number2
-                    ordreAffichage = Math.floor(Math.random() * 2)
-                    if (ordreAffichage === 0) operation.innerHTML = number + ' x ' + number2
-                    if (ordreAffichage === 1) operation.innerHTML = number2 + ' x ' + number
-                    listeErreurs.push(operation.innerHTML)
+                    number = Math.floor(Math.random() * 10)
+                    number2 = Math.floor(Math.random() * 10)
+                    resultat = number + number2
+                    operation.innerHTML = number + ' + ' + number2
                     break
 
                 case 2 :
-                    number = Math.floor(Math.random() * 4 + 6)
-                    number2 = Math.floor(Math.random() * 4 + 6)
-                    resultat = number * number2
-                    ordreAffichage = Math.floor(Math.random() * 2)
-                    if (ordreAffichage === 0) operation.innerHTML = number + ' x ' + number2
-                    if (ordreAffichage === 1) operation.innerHTML = number2 + ' x ' + number
-                    listeErreurs.push(operation.innerHTML)
+                    number = Math.floor(Math.random() * 100)
+                    number2 = Math.floor(Math.random() * 10)
+                    resultat = number + number2
+                    operation.innerHTML = number + ' + ' + number2
                     break
 
-                // case 3 :
-                //     number = Math.floor(Math.random() * 10)
-                //     number2 = Math.floor(Math.random() * 10)
-                //     if (number < number2) {
-                //         resultat = number2 - number
-                //         operation.innerHTML = number2 + ' - ' + number
-                //     } else {
-                //         resultat = number - number2
-                //         operation.innerHTML = number + ' - ' + number2
-                //     }
-                //     break
+                case 3 :
+                    number = Math.floor(Math.random() * 10)
+                    number2 = Math.floor(Math.random() * 10)
+                    if (number < number2) {
+                        resultat = number2 - number
+                        operation.innerHTML = number2 + ' - ' + number
+                    } else {
+                        resultat = number - number2
+                        operation.innerHTML = number + ' - ' + number2
+                    }
+                    break
             }
+
+
+            // switch (niveau) {
+            //     case 1:
+            //         number = Math.floor(Math.random() * 5 + 1)
+            //         number2 = Math.floor(Math.random() * 5 + 5)
+            //         resultat = number * number2
+            //         ordreAffichage = Math.floor(Math.random() * 2)
+            //         if (ordreAffichage === 0) operation.innerHTML = number + ' x ' + number2
+            //         if (ordreAffichage === 1) operation.innerHTML = number2 + ' x ' + number
+            //         listeErreurs.push(operation.innerHTML)
+            //         break
+            //
+            //     case 2 :
+            //         number = Math.floor(Math.random() * 4 + 6)
+            //         number2 = Math.floor(Math.random() * 4 + 6)
+            //         resultat = number * number2
+            //         ordreAffichage = Math.floor(Math.random() * 2)
+            //         if (ordreAffichage === 0) operation.innerHTML = number + ' x ' + number2
+            //         if (ordreAffichage === 1) operation.innerHTML = number2 + ' x ' + number
+            //         listeErreurs.push(operation.innerHTML)
+            //         break
+
+
+            // }
 
             document.addEventListener('keydown', saisie)
 
@@ -129,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 reponse.innerHTML = ""
                 document.removeEventListener('keydown', saisie)
 
-                if (score === 2) {
+                if (score === 15) {
                     clearTimeout(timer)
                     affichageScore.innerHTML = score + ' / 15'
                     reponse.className = "bravo"

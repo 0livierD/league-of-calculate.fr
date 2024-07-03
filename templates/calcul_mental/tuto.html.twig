@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calcul mental{% endblock %}
+
+{% block body %}
+    {% include 'fragments/container-gauche.html.twig' %}
+    <div class="container-droite ombre flex centrerHz">
+        <button class="buttonValider"><a href="{{ path('app_calcul_mental') }}">Jouer</a></button>
+    </div>
+{% endblock %}

@@ -3,8 +3,20 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-   {% include 'fragments/container-gauche.html.twig' %}
-    <div class="container-droite ombre flex centrerHz">
-        <button class="buttonValider"><a href="{{ path('app_calcul_mental') }}">Jouer</a></button>
+    <div class="little-container">
+        <div class="flexAccueil">
+            <div class="imageAccueil">
+                <img class="imageEnfantAccueil" src="{{ asset('image/enfantAccueil.png') }}" alt="">
+            </div>
+            <div class="textAccueil flex flexColonne">
+                <h2 class="police">Bienvenue sur <b>League Of Calculate</b></h2>
+                <h3 class="police">Site dédié aux calculs mathématiques</h3>
+                <p>Réussis les défis en solo ou remporte des duels pour grimper dans les rangs et devenir le
+                    nouveau champion de ta catégorie. Le site est encore au début de sa construction. Les différents
+                    jeux et classements arriveront bientôt.</p>
+            </div>
+        </div>
+
     </div>
+
 {% endblock %}

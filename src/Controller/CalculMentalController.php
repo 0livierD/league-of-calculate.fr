@@ -11,11 +11,15 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class CalculMentalController extends AbstractController
 {
 
-    #[Route('/calcul-mental', name: 'app_calcul_mental')]
+    #[Route('/index', name: 'app_calcul_mental_tuto')]
     public function index(): Response
     {
-        return $this->render('calcul_mental/index.html.twig', [
-            'controller_name' => 'CalculMentalController',
-        ]);
+        return $this->render('calcul_mental/tuto.html.twig');
+    }
+
+    #[Route('/calcul-mental', name: 'app_calcul_mental')]
+    public function play(): Response
+    {
+        return $this->render('calcul_mental/index.html.twig');
     }
 }

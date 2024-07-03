@@ -1,6 +1,11 @@
 <div class="container-header">
     <div class="boiteHeaderGauche">
-        {#            <img class="logo" src="{{ asset('image/logo2.png') }}" alt="logo"> #}
+        <div>
+            <button class="button-menu"><a class="aHeader" href="{{ path('app_accueil') }}">Accueil</a>
+                <button class="button-menu"><a class="aHeader" href="{{ path('app_calcul_mental_tuto') }}">Jouer</a>
+            {#                    <img class="logo" src="{{ asset('image/logo2.png') }}" alt="logo">#}
+        </div>
+
     </div>
     <div class="boiteHeaderDroite">
         {% if app.user is null %}

@@ -4,69 +4,72 @@
 
 {% block body %}
 
-    <div class="div-centre">
+    <div class="little-container">
+        <div class="div-centre">
 
-        <div class="displayNone" id="erreurLogin">
-            {% if error is not null %}
-                {{ error.message }}
-            {% endif %}
-        </div>
-
-        <div class="imageErreur">
-            <div class="bulleEtMessage">
-                <img src="{{ asset('image/bulle.png') }}" alt="" class="bulle displayNone">
-                <div id="divErreur"></div>
-            </div>
-            <img src="{{ asset('image/instit.png') }}" alt="" class="instit displayNone">
-        </div>
-
-        <form method="post">
-
-            <h1 class="marginH1">Connexion</h1>
-
-            {% if app.user %}
-                <div class="messageErreur">
-                    Tu es déjà connecté avec ce pseudo : {{ app.user.pseudo }}
-                </div>
-            {% endif %}
-
-            {% if error %}
-                {% if error.message == 'pas vérifié' %}
-                    <div class="messageErreur">Votre compte n'a pas encore été activé, merci de cliquer sur le lien qui vous a été envoyé par mail. </div>
-                      <div class="messageErreur marginBottom3vh">Pour renvoyer un lien, Cliquez <a href="{{ path('app_relance_email', {'id': app.session.get('id'), 'nbRelance' : nbRelance}) }}">ici</a></div>
+            <div class="displayNone" id="erreurLogin">
+                {% if error is not null %}
+                    {{ error.message }}
                 {% endif %}
-            {% endif %}
-
-            <div class="formulaire">
-                <div class="flex-formulaire">
-                    <label for="inputEmail">Email</label>
-                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="champs-formulaire"
-                           autocomplete="email" required autofocus>
-                </div>
-                <div class="flex-formulaire">
-                    <label for="inputPassword">Mot de passe</label>
-                    <input type="password" name="password" id="inputPassword" class="champs-formulaire"
-                           autocomplete="current-password" required>
-                </div>
             </div>
 
-            <input type="hidden" name="_csrf_token"
-                   value="{{ csrf_token('authenticate') }}">
-
-            <div class="mpdOublie">
-                <label>
-                    <input class="checkbox" type="checkbox" name="_remember_me"> Se souvenir de moi
-                </label>
-                <label>
-                    <a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié</a>
-                </label>
+            <div class="imageErreur">
+                <div class="bulleEtMessage">
+                    <img src="{{ asset('image/bulle.png') }}" alt="" class="bulle displayNone">
+                    <div id="divErreur"></div>
+                </div>
+                <img src="{{ asset('image/instit.png') }}" alt="" class="instit displayNone">
             </div>
 
-            <button class="buttonValider marginTop3vh" type="submit">
-                Valider
-            </button>
-        </form>
+            <form method="post">
+
+                <h1 class="marginH1">Connexion</h1>
+
+                {% if app.user %}
+                    <div class="messageErreur">
+                        Tu es déjà connecté avec ce pseudo : {{ app.user.pseudo }}
+                    </div>
+                {% endif %}
+
+                {% if error %}
+                    {% if error.message == 'pas vérifié' %}
+                        <div class="messageErreur">Votre compte n'a pas encore été activé, merci de cliquer sur le lien qui vous a été envoyé par mail. </div>
+                        <div class="messageErreur marginBottom3vh">Pour renvoyer un lien, Cliquez <a href="{{ path('app_relance_email', {'id': app.session.get('id'), 'nbRelance' : nbRelance}) }}">ici</a></div>
+                    {% endif %}
+                {% endif %}
+
+                <div class="formulaire">
+                    <div class="flex-formulaire">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="champs-formulaire"
+                               autocomplete="email" required autofocus>
+                    </div>
+                    <div class="flex-formulaire">
+                        <label for="inputPassword">Mot de passe</label>
+                        <input type="password" name="password" id="inputPassword" class="champs-formulaire"
+                               autocomplete="current-password" required>
+                    </div>
+                </div>
+
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}">
+
+                <div class="mpdOublie">
+                    <label>
+                        <input class="checkbox" type="checkbox" name="_remember_me"> Se souvenir de moi
+                    </label>
+                    <label>
+                        <a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié</a>
+                    </label>
+                </div>
+
+                <button class="buttonValider marginTop3vh" type="submit">
+                    Valider
+                </button>
+            </form>
+        </div>
     </div>
+
 
 {% endblock %}
 
